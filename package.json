@@ -1,0 +1,27 @@
+{
+  "name": "hono_openapi",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "@hono/zod-openapi": "^0.17.0",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.7",
+    "hono": "^4.6.10",
+    "hono-pino": "^0.6.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^13.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.9.1",
+    "@types/node": "^20.11.17",
+    "eslint": "^9.14.0",
+    "eslint-plugin-format": "^0.1.2",
+    "tsx": "^4.7.1"
+  }
+}
