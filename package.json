@@ -1,6 +1,7 @@
 {
   "name": "hono_openapi",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "lint": "eslint .",
@@ -9,6 +10,7 @@
   "dependencies": {
     "@hono/node-server": "^1.13.7",
     "@hono/zod-openapi": "^0.17.0",
+    "@scalar/hono-api-reference": "^0.5.159",
     "dotenv": "^16.4.5",
     "dotenv-expand": "^11.0.7",
     "hono": "^4.6.10",
