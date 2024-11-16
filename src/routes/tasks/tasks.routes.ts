@@ -1,7 +1,8 @@
 import { createRoute, z } from "@hono/zod-openapi";
 
-import * as HttpStatusCodes from "@/http-status-codes.js";
-import jsonContent from "@/openapi/helpers/json-content.js";
+import { selectTaskSchema } from "@/db/schema";
+import * as HttpStatusCodes from "@/http-status-codes";
+import jsonContent from "@/openapi/helpers/json-content";
 
 const tags = ["Tasks"];
 
@@ -11,10 +12,7 @@ export const list = createRoute({
   tags,
   responses: {
     [HttpStatusCodes.OK]: jsonContent(
-      z.array(z.object({
-        name: z.string(),
-        done: z.boolean(),
-      })),
+      z.array(selectTaskSchema),
       "The list of tasks",
     ),
   },

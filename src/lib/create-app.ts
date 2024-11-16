@@ -1,12 +1,12 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { requestId } from "hono/request-id";
 
-import notFound from "@/middlewares/not-found.js";
-import onError from "@/middlewares/on-error.js";
-import { pinoLogger } from "@/middlewares/pino-logger.js";
-import defaultHook from "@/openapi/default-hook.js";
+import notFound from "@/middlewares/not-found";
+import onError from "@/middlewares/on-error";
+import { pinoLogger } from "@/middlewares/pino-logger";
+import defaultHook from "@/openapi/default-hook";
 
-import type { AppBindings } from "./types.js";
+import type { AppBindings } from "./types";
 
 export function createRouter() {
   return new OpenAPIHono<AppBindings>({ strict: false, defaultHook });

@@ -1,8 +1,8 @@
-import index from "@/routes/index.route.js";
-import tasks from "@/routes/tasks/tasks.index.js";
+import index from "@/routes/index.route";
+import tasks from "@/routes/tasks/tasks.index";
 
-import configureOpenAPI from "./lib/configure-open-api.js";
-import createApp from "./lib/create-app.js";
+import configureOpenAPI from "./lib/configure-open-api";
+import createApp from "./lib/create-app";
 
 const app = createApp();
 const routes = [
