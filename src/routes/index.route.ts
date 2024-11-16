@@ -1,27 +1,21 @@
 import { createRoute } from "@hono/zod-openapi";
-import { z } from "zod";
 
+import * as HttpStatusCodes from "@/http-status-codes.js";
 import { createRouter } from "@/lib/create-app.js";
+import jsonContent from "@/openapi/helpers/json-content.js";
+import createMessageObjectSchema from "@/openapi/schemas/create-message-object.js";
 
 const router = createRouter().openapi(createRoute({
+  tags: ["Index"],
   method: "get",
   path: "/",
   responses: {
-    200: {
-      content: {
-        "application/json": {
-          schema: z.object({
-            message: z.string(),
-          }),
-        },
-      },
-      description: "Tasks API Index",
-    },
+    [HttpStatusCodes.OK]: jsonContent(createMessageObjectSchema("Tasks API ABC"), "Tasks Api"),
   },
 }), (c) => {
   return c.json({
-    message: "Tasks API",
-  }, 200);
+    message: "Tasks API111",
+  }, HttpStatusCodes.OK);
 });
 
 export default router;
